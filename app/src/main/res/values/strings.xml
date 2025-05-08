@@ -1,3 +1,17 @@
 <resources>
-    <string name="app_name">Alarmas</string>
+    <string name="app_name">Alarms</string>
+    <string name="alarm_add">Add new alarm</string>
+    <string name="alarm_edit">Edit alarm</string>
+    <string name="alarm_remove">Remove alarm</string>
+    <string name="alarm_activate">Activate alarm</string>
+    <string name="alarm_activated">Alarm activated</string>
+    <string name="alarm_deactivate">Deactivate alarm</string>
+    <string name="alarm_deactivated">Deactivated alarm</string>
+    <string name="menu">Menu</string>
+    <string name="save">Save</string>
+    <string name="cero">00</string>
+    <string name="hours">Hours</string>
+    <string name="minutes">Minutes</string>
+    <string name="seconds">Seconds</string>
+    <string name="dospuntos">:</string>
 </resources>

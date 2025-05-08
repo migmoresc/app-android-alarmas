@@ -1,0 +1,50 @@
+import android.os.Bundle
+import android.text.InputFilter
+import android.text.Spanned
+import android.widget.EditText
+import androidx.appcompat.app.AppCompatActivity
+
+class MainActivity : AppCompatActivity() {
+
+    private lateinit var editTextRangoNumerico: EditText
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main) // Reemplaza con el nombre de tu layout
+
+        editTextRangoNumerico = findViewById(R.id.editTextRangoNumerico)
+
+        val filter = object : InputFilter {
+            override fun filter(
+                source: CharSequence?,
+                start: Int,
+                end: Int,
+                dest: Spanned?,
+                dstart: Int,
+                dend: Int
+            ): CharSequence? {
+                val newText = dest?.subSequence(0, dstart).toString() +
+                        (source?.subSequence(start, end)?.toString() ?: "") +
+                        dest?.subSequence(dend, dest.length).toString()
+
+                // Permitir borrar
+                if (newText.isEmpty()) {
+                    return null
+                }
+
+                try {
+                    val input = newText.toInt()
+                    if (input in 0..59) {
+                        return null // Aceptar la entrada
+                    }
+                } catch (e: NumberFormatException) {
+                    // Ignorar si la entrada no es un número válido temporalmente
+                }
+
+                return "" // Rechazar la entrada
+            }
+        }
+
+        editTextRangoNumerico.filters = arrayOf(filter)
+    }
+}

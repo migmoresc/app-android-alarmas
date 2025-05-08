@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Alarmas</string>
+    <string name="alarm_add">Añadir nueva alarma</string>
+    <string name="alarm_edit">Editar alarma</string>
+    <string name="alarm_remove">Borrar alarma</string>
+    <string name="alarm_activate">Activar alarma</string>
+    <string name="alarm_activated">Alarma activada</string>
+    <string name="alarm_deactivate">Desactivar alarma</string>
+    <string name="alarm_deactivated">Alarma desactivada</string>
+    <string name="menu">Menu</string>
+    <string name="save">Guardar</string>
+    <string name="cero">00</string>
+    <string name="minutes">Minutos</string>
+    <string name="hours">Horas</string>
+    <string name="seconds">Segundos</string>
+    <string name="dospuntos">:</string>
+</resources>
