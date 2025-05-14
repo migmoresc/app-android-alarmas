@@ -1,20 +1,40 @@
-import android.os.Bundle
+package com.migmoresc.alarmas
+
 import android.text.InputFilter
 import android.text.Spanned
-import android.widget.EditText
-import androidx.appcompat.app.AppCompatActivity
 
-class MainActivity : AppCompatActivity() {
+object InputFilterHelper {
 
-    private lateinit var editTextRangoNumerico: EditText
+    // Filter to allow only digits
+    fun allowDigitsOnly(): InputFilter {
+        return InputFilter { source, _, _, _, _, _ ->
+            if (source.matches(Regex("[0-9]*"))) source else ""
+        }
+    }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main) // Reemplaza con el nombre de tu layout
+    // Filter to allow only letters
+    fun allowLettersOnly(): InputFilter {
+        return InputFilter { source, _, _, _, _, _ ->
+            if (source.matches(Regex("[a-zA-Z]*"))) source else ""
+        }
+    }
 
-        editTextRangoNumerico = findViewById(R.id.editTextRangoNumerico)
+    // Filter to limit the length of the input
+    fun maxLengthFilter(maxLength: Int): InputFilter {
+        return InputFilter.LengthFilter(maxLength)
+    }
 
-        val filter = object : InputFilter {
+    // Filter to allow only alphanumeric characters
+    fun allowAlphanumeric(): InputFilter {
+        return InputFilter { source, _, _, _, _, _ ->
+            if (source.matches(Regex("[a-zA-Z0-9]*"))) source else ""
+        }
+    }
+
+    //
+    fun numerosDel0Al(numIncluido: Int):InputFilter
+    {
+        return object : InputFilter {
             override fun filter(
                 source: CharSequence?,
                 start: Int,
@@ -34,7 +54,7 @@ class MainActivity : AppCompatActivity() {
 
                 try {
                     val input = newText.toInt()
-                    if (input in 0..59) {
+                    if (input in 0..numIncluido) {
                         return null // Aceptar la entrada
                     }
                 } catch (e: NumberFormatException) {
@@ -44,7 +64,5 @@ class MainActivity : AppCompatActivity() {
                 return "" // Rechazar la entrada
             }
         }
-
-        editTextRangoNumerico.filters = arrayOf(filter)
     }
 }

@@ -14,4 +14,14 @@
     <string name="minutes">Minutes</string>
     <string name="seconds">Seconds</string>
     <string name="dospuntos">:</string>
+    <string name="accept">Accept</string>
+    <string name="cancel">Cancel</string>
+    <string name="h">H</string>
+    <string name="m">M</string>
+    <string name="s">S</string>
+    <string name="alarm_added">Alarm added</string>
+    <string name="alarm_deleted">Alarm deleted</string>
+    <string name="alarm_added_error">All times needed</string>
+    <string name="error">There has been an error</string>
+    <string name="alarm_deleted_error">The alarm could not be deleted</string>
 </resources>

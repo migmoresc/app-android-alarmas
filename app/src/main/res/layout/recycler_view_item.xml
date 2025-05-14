@@ -1,43 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rviFramePadre"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:gravity="center_horizontal"
-    android:background="@color/teal_200"
-    android:layout_marginVertical="8dp">
+    android:layout_marginVertical="10dp"
+    android:background="@color/black2"
+    android:baselineAligned="false"
+    android:gravity="end"
+    android:orientation="horizontal">
 
-    <TextView
-        android:id="@+id/rviTextView"
+    <FrameLayout
+        android:id="@+id/rviFrameA"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/rviTextView"
+            style="@style/rviTextView"
+            android:layout_width="100dp"
+            tools:text="00:05:00" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/rviFrameB"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/rviTextViewControl"
+            android:layout_width="100dp"
+            style="@style/rviTextView"
+            tools:text="00:05:00" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/rviFrameC"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="32sp"
-        android:textColor="@android:color/black"
-        android:paddingVertical="0dp"
-        android:includeFontPadding="false"
-        tools:text="00:05:00"
-        android:layout_gravity="center_vertical"/>
+        android:orientation="horizontal">
 
-    <ImageButton
-        android:id="@+id/ibAlarm"
-        style="@style/botonesAlarmas"
-        android:contentDescription="@string/alarm_activate"
-        app:srcCompat="@drawable/ic_alarm_on"
-        />
+        <ImageButton
+            android:id="@+id/rviIBAlarm"
+            style="@style/botonesAlarmas"
+            android:contentDescription="@string/alarm_activate"
+            app:srcCompat="@drawable/ic_alarm_on" />
 
-    <ImageButton
-        android:id="@+id/ibAlarmEdit"
-        style="@style/botonesAlarmas"
-        android:contentDescription="@string/alarm_edit"
-        app:srcCompat="@drawable/ic_edit"
-        />
+        <ImageButton
+            android:id="@+id/rviIBAlarmEdit"
+            style="@style/botonesAlarmas"
+            android:contentDescription="@string/alarm_edit"
+            app:srcCompat="@drawable/ic_edit" />
 
-    <ImageButton
-        android:id="@+id/ibAlarmRemove"
-        style="@style/botonesAlarmas"
-        android:contentDescription="@string/alarm_remove"
-        app:srcCompat="@drawable/ic_bin"
-        />
+        <ImageButton
+            android:id="@+id/rviIBAlarmRemove"
+            style="@style/botonesAlarmas"
+            android:contentDescription="@string/alarm_remove"
+            app:srcCompat="@drawable/ic_bin" />
+
+    </LinearLayout>
+
 </LinearLayout>

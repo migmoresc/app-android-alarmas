@@ -15,4 +15,14 @@
     <string name="hours">Horas</string>
     <string name="seconds">Segundos</string>
     <string name="dospuntos">:</string>
+    <string name="accept">Aceptar</string>
+    <string name="cancel">Cancelar</string>
+    <string name="h">H</string>
+    <string name="m">M</string>
+    <string name="s">S</string>
+    <string name="alarm_added">Alarma añadida</string>
+    <string name="alarm_deleted">Alarma borrada</string>
+    <string name="alarm_added_error">Se necesitan todos los tiempos</string>
+    <string name="error">Ha habido un error</string>
+    <string name="alarm_deleted_error">no se ha podido borrar la alarma</string>
 </resources>
